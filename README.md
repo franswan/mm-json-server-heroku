@@ -17,7 +17,7 @@ Send it to Heroku
 
 `git add .`
 `git commit -m "updating the cards again dawg"`
-`git push heroku master`
+`git push heroku main:master`
 
 Card API will now be updated so any client apps will have access to fresh cards and updated values
 
