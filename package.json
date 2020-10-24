@@ -1,7 +1,7 @@
 {
   "name": "mm-json-server-heroku",
   "version": "1.0.0",
-  "description": "json based database to deploy to Heroku for developer access to card library",
+  "description": "json database to deploy to Heroku for developer access to card library",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
