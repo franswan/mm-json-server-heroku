@@ -1,4 +1,4 @@
-# Meme Magic JSON Server
+# M3me Magic JSON Server
 
 JSON based database to deploy to Heroku for developer access to the card library API: https://meme-magic-json-server-heroku.herokuapp.com/
 
