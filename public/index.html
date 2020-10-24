@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Meme Magic JSON Server</title>
+<link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+</head>
+
+<body>
+<div class="mw9 center ph3-ns">
+<header>
+<h1 class="ttc fw1 f1">Meme Magic JSON Server</h1>
+</header>
+</div>
+
+<div class="mw9 center ph3-ns">
+<div class="cf ph2-ns">
+<div class="fl w-100 w-50-ns pa2">
+<div class="bg-white pv4">
+
+<main>
+<div class="container">
+
+<div id="resources"></div>
+
+
+<h3 class="f3 ttu fw1">Paginate</h3>
+
+<p>Use _page and optionally _limit to paginate returned data.</p>
+
+<pre class="bg-light-gray pa2 br2">
+GET /cards?_page=2
+GET /cards?_page=2&_limit=5
+
+// 10 items are returned by default
+</pre>
+
+Example (shows second page 5): <a href="/cards?_page=2&_limit=5">/cards?_page=2&_limit=5</a>
+
+<h3 class="f3 ttu fw1 mt5">Sort</h3>
+
+<p>Add _sort and _order (ascending order by default)</p>
+
+<pre class="bg-light-gray pa2 br2">
+GET /cards?_sort=views&_order=asc
+GET /cards/1/comments?_sort=votes&_order=asc
+</pre>
+
+<p>For multiple fields, use the following format:</p>        
+
+<h3 class="f3 ttu fw1 mt5">Slice</h3>
+
+<p>Add _start and _end or _limit (an X-Total-Count header is included in the response)</p>
+
+<pre class="bg-light-gray pa2 br2">
+GET /cards?_start=20&_end=30
+GET /cards/1/comments?_start=20&_end=30
+GET /cards/1/comments?_start=20&_limit=10
+
+// Works exactly as Array.slice (i.e. _start is inclusive and _end exclusive)
+</pre>        
+
+
+<h3 class="f3 ttu fw1 mt5">Operators</h3>
+
+<p>Add _gte or _lte for getting a range</p>
+
+<pre class="bg-light-gray pa2 br2">
+GET /cards?views_gte=10&views_lte=20
+</pre>
+
+<p>Add _ne to exclude a value</p>
+
+<pre class="bg-light-gray pa2 br2">
+GET /cards?id_ne=1
+</pre>
+
+<p>Add _like to filter (RegExp supported)</p>
+
+<pre class="bg-light-gray pa2 br2">
+GET /cards?title_like=server
+</pre>
+
+<p>Full-text search: Add q</p>
+
+<pre class="bg-light-gray pa2 br2">
+GET /cards?q=internet
+</pre>
+
+
+
+<!-- <div id="custom-routes"></div> -->
+
+</div>
+</main>
+
+
+</div>
+</div>
+<div class="fl w-100 w-50-ns pa2">
+<div class="bg-white pv4"></div>
+</div>
+</div>
+</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
